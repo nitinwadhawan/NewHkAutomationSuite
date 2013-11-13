@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Test">
+    <parameter name="BaseURL" value="http://stagnew.healthkart.com"/>
+    <parameter name="Browser" value="chrome"/>
+    <test name="ExistingUserOrderCard">
+        <classes>
+            <class name="orderPlacement.ExistingUserOrderCard"/>
+        </classes>
+    </test>
+    <test name="ExistingUserOrderCOD">
+        <classes>
+            <class name="orderPlacement.ExistingUserOrderCOD"/>
+        </classes>
+    </test>
+    <test name="SignUpAndOrderCard">
+        <classes>
+            <class name="orderPlacement.SignUpAndOrderCard"/>
+        </classes>
+    </test>
+    <test name="SignUpAndOrderCOD">
+        <classes>
+            <class name="orderPlacement.SignUpAndOrderCOD"/>
+        </classes>
+    </test>
+
+</suite>

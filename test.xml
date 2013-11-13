@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sanity test Suite" parallel="false" >
+    <parameter name="BaseURL" value="http://192.168.1.112:9191"/>
+    <test name="Place order using existing login -COD" >
+        <classes>
+            <class name="orderPlacement.ExistingUserOrderCard" >
+            </class>
+        </classes>
+    </test>
+</suite>
