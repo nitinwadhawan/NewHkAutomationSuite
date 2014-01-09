@@ -50,7 +50,7 @@ public class Stack extends SharedLibHtml {
 	public Iterator<Object[]> readFromExcelIterator() throws FileNotFoundException, IOException {
 		//	prop.load(getClass().getResourceAsStream("AutomationEnv.properties"));
 		//String sourceXlsFileName=(String)prop.get("signUpAndOrderCard");
-		String fileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\browserStack.xls";
+		String fileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\browserStack.xls";
 		int sheetNo = 0;
 		ArrayList<Object[]> excelDataArray = new ArrayList<Object[]>();
 		int cnt = 0;

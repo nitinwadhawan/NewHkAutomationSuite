@@ -9,7 +9,7 @@ package elementLocaters;
  */
 public class SearchResultPage {
 
-	private String firstProductResult=".//*[@id='variantResultView']/div[1]/div/div/a/span";//1 represents first product
+	private String firstProductResult=".//*[@id='variantResultView']/div[1]/div/a/img";//1 represents first product
 
 	public String getFirstProductResult() {
 		return firstProductResult;

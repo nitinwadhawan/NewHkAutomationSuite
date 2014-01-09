@@ -25,7 +25,7 @@ import java.util.*;
 public class ExistingUserOrderCard {
 
 	public class SignUpandOrderCard extends SharedLibHtml {
-		public String sourceXlsFileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkTestSuite\\Excel\\signUpandPlace.xls";
+		public String sourceXlsFileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 		public String backgroundHtmlPrefix = "<table id = 'mytable' width='100%' border='1' cellpadding='2' cellspacing='2' style='background-color: #DAEBE6;'>";
 		public String backgroundHtmlSufix = "</table>";
 		public String screenShotCaptureFileName = "";
@@ -55,10 +55,11 @@ public class ExistingUserOrderCard {
 			Click(homePage.getSearchBtn(), "search btn", "homepage", driver.getCurrentUrl(), driver, tcID);
 			Click(searchResultPage.getFirstProductResult(), "First product", "Search results", driver.getCurrentUrl(), driver, tcID);
 			Click(productDetailPage.getBuyNowBtn(), "Buy now btn", "Product detail page", driver.getCurrentUrl(), driver, tcID);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			boolean isCartExist = isElementExist(productDetailPage.getCartMouseOver(), "Mouse over on your cart", "Product detail page", driver.getCurrentUrl(), driver, tcID);
 			if (isCartExist) {
 				//	proceedToCart();
+                Click(productDetailPage.getBuyNowBtn(), "Buy now btn", "Product detail page", driver.getCurrentUrl(), driver, tcID);
 				driver.get(baseUrl + "/beta/cart/Cart.action");
 
 			}
@@ -70,7 +71,7 @@ public class ExistingUserOrderCard {
 			boolean isExistingAddress = verifyIsExist(cartFlow.getAddress1Box(), "Address 1 box", "Address page", driver.getCurrentUrl(), driver, tcID);
 			if (!isExistingAddress) {
 				sendKeys(cartFlow.getNewAddNameTextBox(), "Login page", "sign up", driver.getCurrentUrl(), signUpName, driver, tcID);
-				sendKeys(cartFlow.getNewAddMobileTextBox(), "Login page", "sign up", driver.getCurrentUrl(), "9560489739", driver, tcID);
+				sendKeys(cartFlow.getNewAddMobileTextBox(), "Login page", "sign up", driver.getCurrentUrl(), "9999999999", driver, tcID);
 				sendKeys(cartFlow.getNewAddLine1TextBox(), "Login page", "sign up", driver.getCurrentUrl(), signUpPass, driver, tcID);
 				sendKeys(cartFlow.getNewAddPinCode(), "Login page", "sign up", driver.getCurrentUrl(), "110085", driver, tcID);
 				sendKeys(cartFlow.getNewAddCity(), "Login page", "sign up", driver.getCurrentUrl(), signUpPass, driver, tcID);
@@ -107,7 +108,7 @@ public class ExistingUserOrderCard {
 		public Iterator<Object[]> readFromExcelIterator() throws FileNotFoundException, IOException {
 			//	prop.load(getClass().getResourceAsStream("AutomationEnv.properties"));
 			//String sourceXlsFileName=(String)prop.get("signUpAndOrderCard");
-			String fileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
+			String fileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 			int sheetNo = 0;
 			ArrayList<Object[]> excelDataArray = new ArrayList<Object[]>();
 			int cnt = 0;
@@ -168,7 +169,7 @@ public class ExistingUserOrderCard {
 			//String temp="";
 			long e2 = Math.round(Math.random() * 10000);
 			String temp = "testNewUI" + e2;
-			email = temp.concat(temp).concat("@automation.com");
+			email = temp.concat(temp).concat("@gmail.com");
 			System.out.println(email);
 
 			return email;

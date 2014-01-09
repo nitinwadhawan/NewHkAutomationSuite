@@ -29,7 +29,7 @@ import java.util.*;
 public class ExistingUserOrderCOD {
 
 	public class SignUpandOrderCard extends SharedLibHtml {
-		public String sourceXlsFileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
+		public String sourceXlsFileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 		public String backgroundHtmlPrefix = "<table id = 'mytable' width='100%' border='1' cellpadding='2' cellspacing='2' style='background-color: #DAEBE6;'>";
 		public String backgroundHtmlSufix = "</table>";
 		public String screenShotCaptureFileName = "";
@@ -130,7 +130,7 @@ public class ExistingUserOrderCOD {
 		public Iterator<Object[]> readFromExcelIterator() throws FileNotFoundException, IOException {
 			//	prop.load(getClass().getResourceAsStream("AutomationEnv.properties"));
 			//String sourceXlsFileName=(String)prop.get("signUpAndOrderCard");
-			String fileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
+			String fileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 			int sheetNo = 0;
 			ArrayList<Object[]> excelDataArray = new ArrayList<Object[]>();
 			int cnt = 0;
@@ -191,7 +191,7 @@ public class ExistingUserOrderCOD {
 			//String temp="";
 			long e2 = Math.round(Math.random() * 10000);
 			String temp = "testNewUI" + e2;
-			email = temp.concat(temp).concat("@automation.com");
+			email = temp.concat(temp).concat("@gmail.com");
 			System.out.println(email);
 
 			return email;

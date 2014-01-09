@@ -3,7 +3,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="TestNG Test">
-    <parameter name="BaseURL" value="http://stagnew.healthkart.com"/>
+    <parameter name="BaseURL" value="http://www.healthkart.com"/>
     <parameter name="Browser" value="chrome"/>
     <test name="ExistingUserOrderCard">
         <classes>

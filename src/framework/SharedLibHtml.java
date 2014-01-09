@@ -307,7 +307,7 @@ public class SharedLibHtml extends SendEmailHtml {
 			driver.manage().window().maximize();
 			driver.get(AppURL);
 		} else if (BrowserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkTestSuite\\BrowserDrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\BrowserDrivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 			driver.manage().window().maximize();

@@ -25,7 +25,7 @@ import java.util.*;
 public class SignUpAndOrderCOD {
 
 	public class SignUpandOrderCard extends SharedLibHtml {
-		public String sourceXlsFileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
+		public String sourceXlsFileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 		public String backgroundHtmlPrefix = "<table id = 'mytable' width='100%' border='1' cellpadding='2' cellspacing='2' style='background-color: #DAEBE6;'>";
 		public String backgroundHtmlSufix = "</table>";
 		public String screenShotCaptureFileName = "";
@@ -71,7 +71,7 @@ public class SignUpAndOrderCOD {
 			Click(loginPage.getCreateAnAccountBtn(), "Create an account button", "Sign in page", driver.getCurrentUrl(), driver, tcID);
 
 			sendKeys(signUpPage.getNameTextBox(), "Login page", "sign up", driver.getCurrentUrl(), signUpName, driver, tcID);
-			sendKeys(signUpPage.getEmailIdTextBox(), "Login page", "sign up", driver.getCurrentUrl(), randomEmail, driver, tcID);
+			//sendKeys(signUpPage.getEmailIdTextBox(), "Login page", "sign up", driver.getCurrentUrl(), randomEmail, driver, tcID);
 			sendKeys(signUpPage.getPasswordTextBox(), "Login page", "sign up", driver.getCurrentUrl(), signUpPass, driver, tcID);
 			sendKeys(signUpPage.getConfirmPassTextBox(), "Login page", "sign up", driver.getCurrentUrl(), signUpPass, driver, tcID);
 			Click(signUpPage.getAgreeConditionsCheckBox(), "Create an account button", "Sign in page", driver.getCurrentUrl(), driver, tcID);
@@ -84,7 +84,9 @@ public class SignUpAndOrderCOD {
 			sendKeys(cartFlow.getNewAddCity(), "Login page", "sign up", driver.getCurrentUrl(), signUpPass, driver, tcID);
 			selectDropdownElementByIndex(cartFlow.getNewAddStateDropDown(), "Address page", "Selecting state", driver.getCurrentUrl(), driver, 10, tcID);
 			Click(cartFlow.getNewAddContinueBtn(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
-			Click(cartFlow.getPayNowBtn(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
+
+
+            Click(cartFlow.getPayNowBtn(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
 			Click(paymentPage.getCodTab(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
 			Click(paymentPage.getCodPayment(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
 			driver.quit();
@@ -109,7 +111,7 @@ public class SignUpAndOrderCOD {
 		public Iterator<Object[]> readFromExcelIterator() throws FileNotFoundException, IOException {
 			//	prop.load(getClass().getResourceAsStream("AutomationEnv.properties"));
 			//String sourceXlsFileName=(String)prop.get("signUpAndOrderCard");
-			String fileName = "C:\\Users\\Nitin Wadhwan\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
+			String fileName = "C:\\Users\\WINQA\\workspace\\NewHkAutomationSuite\\Excel\\signUpandPlace.xls";
 			int sheetNo = 0;
 			ArrayList<Object[]> excelDataArray = new ArrayList<Object[]>();
 			int cnt = 0;
@@ -170,7 +172,7 @@ public class SignUpAndOrderCOD {
 			//String temp="";
 			long e2 = Math.round(Math.random() * 10000);
 			String temp = "testNewUI" + e2;
-			email = temp.concat(temp).concat("@automation.com");
+			email = temp.concat(temp).concat("@gmail.com");
 			System.out.println(email);
 
 			return email;
