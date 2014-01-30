@@ -91,8 +91,6 @@ public class SignUpAndOrderCard {
            // driver.findElement(By.xpath(cartFlow.getNewAddMobileTextBox())).clear();
            // sendKeys(cartFlow.getNewAddMobileTextBox(), "Login page", "sign up", driver.getCurrentUrl(), "9910444067", driver, tcID);
             Click(cartFlow.getNewAddContinueBtn(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
-
-
             Click(cartFlow.getPayNowBtn(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
 			Click(paymentPage.getCreditCardTab(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
 			Click(paymentPage.getEnableVisa(), "Continue btn", "Continue Btn", driver.getCurrentUrl(), driver, tcID);
