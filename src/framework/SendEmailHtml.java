@@ -16,12 +16,12 @@ public class SendEmailHtml
 {
 
   public static final String SMTP_HOST_NAME = "smtp.gmail.com";
-  public static final String SMTP_AUTH_USER = "nitin.wadhawan@healthkart.com";
-  public static final String SMTP_AUTH_PWD  = "nitin2013";
+  public static final String SMTP_AUTH_USER = "healthkarttest@gmail.com";
+  public static final String SMTP_AUTH_PWD  = "healthkart";
 
   public static String emailMsgTxt      = "";
   public static String emailSubjectTxt  = "";
-  public static final String emailFromAddress = "nitin.wadhawan@healthkart.com";
+  public static final String emailFromAddress = "healthkarttest@gmail.com";
   public static String captureScreenShotFile = "";
   public static String attachmentFileName = "";
   public static List<String> attachmentArray = new LinkedList<String>();

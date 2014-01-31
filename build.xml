@@ -1,0 +1,121 @@
+<project name="selenium framework" default="run" basedir=".">
+<property name="classes.dir" value="bin"/>
+<property name="src.dir" value="src"/>
+<property name="report.dir" value="reports"/>
+<property name="browser" value="C:/Program Files (x86)/Mozilla Firefox/firefox.exe"/>
+    <path id="mail.path">
+        <pathelement location="${basedir}/lib/thirdParty/mail.jar"/>
+        <pathelement location="${basedir}/lib/thirdParty/activation.jar"/>
+        <pathelement location="${basedir}/lib/thirdParty/smtp.jar"/>
+    </path>
+    <path id="libs">
+    <fileset dir="lib">
+        <include name="*.jar"/>
+    </fileset>
+    <fileset dir="${basedir}/lib/commons">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/dependencies">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/hibernate">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/json">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/logger">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/mysql">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/poi">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/rest">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/selenium-2.37.0">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/spring">
+        <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}/lib/thirdParty">
+        <include name="**/*.jar" />
+    </fileset>
+    <pathelement path="${basedir}\${classes.dir}"/>
+</path>
+<target name="run">
+    <antcall target="clean"/>
+    <antcall target="init"/>
+    <antcall target="compile"/>
+    <antcall target="runTests"/>
+    <antcall target="Zip"/>
+    <antcall target="sendmail"/>
+    <antcall target="openReport"/>
+</target>
+<!--
+ <target name="install-jars" description="Install ANT optional jars">
+         <mkdir dir="${user.home}/.ant/lib"/>
+         <get dest="${user.home}/.ant/lib/mail.jar"       src="http://search.maven.org/remotecontent?filepath=javax/mail/mail/1.4.4/mail-1.4.4.jar"/>
+         <get dest="${user.home}/.ant/lib/activation.jar" src="http://search.maven.org/remotecontent?filepath=javax/activation/activation/1.1/activation-1.1.jar"/>
+     </target>
+-->
+<!--  Delete old data and create new directories  -->
+<target name="init">
+    <echo>Initlizing...</echo>
+    <delete dir="${classes.dir}"/>
+    <mkdir dir="${classes.dir}"/>
+    <delete dir="${report.dir}"/>
+    <mkdir dir="${report.dir}"/>
+</target>
+<target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="bin"/>
+</target>
+<!--  Complies the java files  -->
+<target name="compile">
+    <echo>Compiling...</echo>
+    <javac debug="true" srcdir="${src.dir}" destdir="${classes.dir}" classpathref="libs"/>
+</target>
+<!--  Runs the file and generates Reportng report  -->
+<target name="runTests" description="Running tests">
+    <echo>Running Tests...</echo>
+    <taskdef resource="testngtasks" classpathref="libs"/>
+    <testng classpathref="libs" outputDir="${report.dir}" haltOnfailure="false">
+        <xmlfileset dir="${basedir}" includes="testng.xml"/>
+    </testng>
+</target>
+<!--  zip to report. -->
+<target name="Zip">
+    <zip destfile="${report.dir}/report.zip" basedir="${report.dir}"/>
+</target>
+<!--  send email. -->
+
+
+<target name="sendmail">
+    <taskdef name="classloadertask"
+             classname="org.apache.tools.ant.taskdefs.ClassloaderTask"
+             classpath="${basedir}/lib/ant-classloadertask.jar"/>
+    <classloadertask classpathRef="mail.path" loader="thread"/>
+    <mail tolist="nitinwadhawan66@gmail.com" from="Automation" subject="HK order placement suite test report" mailhost="smtp.gmail.com" mailport="465" ssl="true" user="healthkarttest@gmail.com" password="healthkart">
+        <attachments>
+            <fileset dir="${report.dir}">
+                <include name="report.zip"/>
+            </fileset>
+        </attachments>
+        <message>Please find the attached report</message>
+    </mail>
+</target>
+<!--  Open the report in browser. -->
+<target name="openReport">
+    <exec executable="${browser}" spawn="yes">
+        <arg line="'${report.dir}\index.html'"/>
+    </exec>
+</target>
+
+
+</project>

@@ -4,13 +4,13 @@
 
 <suite name="TestNG Test">
     <parameter name="BaseURL" value="http://www.localsmokehk.com"/>
-    <parameter name="Browser" value="chrome"/>
+    <parameter name="Browser" value="firefox"/>
     <test name="ExistingUserOrderCard">
         <classes>
             <class name="orderPlacement.ExistingUserOrderCard"/>
         </classes>
     </test>
-    <test name="ExistingUserOrderCOD">
+<!--    <test name="ExistingUserOrderCOD">
         <classes>
             <class name="orderPlacement.ExistingUserOrderCOD"/>
         </classes>
@@ -24,5 +24,5 @@
         <classes>
             <class name="orderPlacement.SignUpAndOrderCOD"/>
         </classes>
-    </test>
+    </test>-->
 </suite>
